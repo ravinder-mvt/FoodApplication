@@ -1,21 +1,19 @@
-import { useState } from 'react'
-import Navbar from './layouts/Navbar'
-import Layout from './layouts/Layout'
+import { useState } from "react";
+import HomePage from "./pages/HomePage";
+import Layout from "./layouts/Layout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    
     <Layout>
-<h1>
-  hello
-</h1>
-
-
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Router>
     </Layout>
-
-  )
+  );
 }
 
-export default App
+export default App;
