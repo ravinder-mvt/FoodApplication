@@ -1,3 +1,5 @@
+import { assets } from "../assets/assets/frontend_assets/assets"
+
 export const NavItems = [
     {
         name: "Home",
@@ -6,7 +8,7 @@ export const NavItems = [
     }, {
         name: "Menu",
         link: "/menu",
-    }, 
+    },
     {
         name: "About",
         link: "/about",
@@ -16,3 +18,5 @@ export const NavItems = [
         link: "/contact",
     }
 ]
+
+

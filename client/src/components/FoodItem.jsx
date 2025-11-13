@@ -1,0 +1,56 @@
+import React from 'react'
+import { assets } from '../assets/assets/frontend_assets/assets'
+import { useState } from 'react'
+const FoodItem = ({ item, index }) => {
+    const [isSelected, setIsSelected] = useState(false)
+    return (
+        <div className='my-6  relative'>
+            <div key={index} className='flex items-center justify-center flex-col shadow-2xl'>
+                <div className='  flex-col sm:flex-row flex items-center h-full justify-center'>
+                    <img src={item?.image} alt="" className='object-cover rounded-t-2xl' />
+                </div>
+                <div className='p-4 flex items-center justify-center gap-12'>
+                    <h1 className='flex text-lg font-medium'>
+                        {item.name}
+                    </h1>
+                    <img src={assets.rating_starts} alt="stars" className='h-4' />
+                </div>
+
+                <div className='p-4 flex flex-col gap-4'>
+
+                    <p className='text-xs max-w-lg leading-relaxed'>
+                        {item.description}
+                    </p>
+                    <h2 className='flex text-xl font-semibold text-red-600'>
+                        ${item.price}
+                    </h2>
+                </div>
+            </div>
+
+            <div className='absolute right-2 bottom-[180px]'>
+                <img src={assets.add_icon_white} alt="plus icon" className='h-10 relative hover:text-green-500 rounded-4xl' onClick={()=>setIsSelected((prev)=>!prev)} />
+
+                {
+                    isSelected && (<>
+                        <div className='flex items-center px-2 bg-white rounded-4xl justify-between  absolute top-0 right-px w-[120px]'>
+                            <div>
+                                <img src={assets.remove_icon_red} alt="remove icons red" className='w-8 h-8 flex items-center justify-center rounded-full' />
+                            </div>
+                            <div>
+                                <p className='bg-white text-black h-10 flex items-center justify-center'>
+                                    10
+                                </p>
+                            </div>
+                            <div>
+                                <img src={assets.add_icon_green} alt="green add icons" className='' />
+                            </div>
+
+                        </div>
+                    </>)
+                }
+            </div>
+        </div>
+    )
+}
+
+export default FoodItem
