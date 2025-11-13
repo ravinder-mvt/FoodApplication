@@ -12,11 +12,11 @@ const MenuSection = () => {
 
 
     return (
-        <div className='my-10 flex flex-col gap-8' id='Menu'>
+        <div className='my-10 flex flex-col gap-4 sm:gap-8' id='Menu'>
             <h1 className='text-3xl font-semibold text-slate-800'>
                 Explore Our Menu
             </h1>
-            <p className='text-md font-medium text-slate-700'>
+            <p className='text-sm sm:text-md font-normal sm:font-medium text-slate-700'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, exercitationem excepturi temporibus obcaecati voluptas vitae?
             </p>
 
