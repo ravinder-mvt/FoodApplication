@@ -47,7 +47,7 @@ const MenuSection = () => {
 
 
                                     <img src={item.menu_image} alt="menu" className={`${activeMenu == item.menu_name ? "border-red-500 border-4" : ""}  rounded-full`} />
-                                    <h1 className='text-xl text-slate-600 font-serif mb-10'>
+                                    <h1 className='text-xl text-slate-600 font-serif mb-20 sm:mb-10'>
                                         {
                                             item.menu_name
                                         }

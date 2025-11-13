@@ -15,10 +15,10 @@ const TopDishes = ({ activeMenu,setActiveMenu }) => {
     return (
         <div className="px-8 py-10">
             <div className='flex items-center justify-between w-full'>
-                <h1 className="text-3xl font-bold mb-8 text-gray-800">
+                <h1 className="text-lg flex items-center justify-center sm:text-3xl font-bold mb-8 text-gray-800">
                     Top Dishes Near You
                 </h1>
-                <p className='flex items-center justify-center hover:border-b-green-500 hover:border-b-2'onClick={()=>setActiveMenu("")}>
+                <p className='flex items-center text-sm justify-center mb-8 hover:border-b-green-500 hover:border-b-2' onClick={()=>setActiveMenu("")}>
                     show all
                 </p>
             </div>
