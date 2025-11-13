@@ -6,11 +6,12 @@ const HeroSection = () => {
             <div
                 style={{
                     backgroundImage: `url(${assets.header_img})`,
+                    backgroundRepeat:"no-repeat"
                 }}
-                className='sm:w-full sm:h-full rounded-3xl'
+                className='max-w-[400px] h-auto sm:w-full sm:h-full rounded-3xl'
             >
                 <div className='flex  justify-center mt-30 items-start p-20 pl-30 h-full gap-8 flex-col'>
-                    <h1 className='text-7xl font-semibold max-w-4xl  leading-22 text-white'>
+                    <h1 className='text-2xl font-semibold sm:text-7xl sm:font-semibold max-w-4xl  sm:leading-22 text-white'>
                         Order your
                         <br/>
                          favourite food here
