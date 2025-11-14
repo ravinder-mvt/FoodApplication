@@ -3,7 +3,7 @@ import { food_list } from '../assets/assets/frontend_assets/assets'
 import FoodItem from './FoodItem'
 
 const TopDishes = ({ activeMenu,setActiveMenu }) => {
-    console.log("Here is the food list:", food_list)
+
 
     const selectedCategory = food_list.filter(
         (item) => item.category === activeMenu
