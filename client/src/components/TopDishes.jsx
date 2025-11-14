@@ -13,7 +13,7 @@ const TopDishes = ({ activeMenu,setActiveMenu }) => {
         selectedCategory.length > 0 ? selectedCategory : food_list
 
     return (
-        <div className="px-8 py-10">
+        <div className=" px-2 py-4 sm:px-8 sm:py-10">
             <div className='flex items-center justify-between w-full'>
                 <h1 className="text-lg flex items-center justify-center sm:text-3xl font-bold mb-8 text-gray-800">
                     Top Dishes Near You
@@ -23,7 +23,7 @@ const TopDishes = ({ activeMenu,setActiveMenu }) => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6">
                 {filteredItems.map((item, index) => (
                     <FoodItem key={index} item={item} index={index} />
                 ))}

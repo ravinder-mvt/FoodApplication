@@ -37,7 +37,7 @@ const MenuSection = () => {
                     removeArrowOnDeviceType={["tablet", "mobile"]}
                     // deviceType={this.props.deviceType}
                     dotListClass="custom-dot-list-style"
-                    itemClass="carousel-item-padding-40-px"
+                    itemClass="carousel-item-padding-20-px"
                 >
                     {
                         menu_list.map((item, index) => {
@@ -47,7 +47,7 @@ const MenuSection = () => {
 
 
                                     <img src={item.menu_image} alt="menu" className={`${activeMenu == item.menu_name ? "border-red-500 border-4" : ""}  rounded-full`} />
-                                    <h1 className='text-xl text-slate-600 font-serif mb-20 sm:mb-10'>
+                                    <h1 className='text-xl text-slate-600 font-serif mb-20'>
                                         {
                                             item.menu_name
                                         }
