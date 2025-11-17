@@ -10,7 +10,6 @@ const Navbar = () => {
     const [IsMenuOpen, setIsMenuOpen] = useState(false)
     const { showLoginPopUp, setShowLoginPopUp } = useLogin()
 
-    console.log('set ismenu oopn===========', IsMenuOpen)
 
     return (
         <nav className="py-10 flex items-center justify-between">
