@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@tanstack/react-query": "^5.90.10",
     "validator": "^13.15.23"
   }
 }

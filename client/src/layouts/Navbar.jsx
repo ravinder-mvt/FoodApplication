@@ -5,10 +5,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom"
 import useLogin from "../ContectApi/UIcontext";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
     const [Isactive, setIsActive] = useState("")
     const [IsMenuOpen, setIsMenuOpen] = useState(false)
     const { showLoginPopUp, setShowLoginPopUp } = useLogin()
+    const navigate=useNavigate()
 
 
     return (
@@ -29,7 +31,7 @@ const Navbar = () => {
             </div>
             <div className="flex  items-center justify-center gap-4 lg:gap-10">
                 <img src={assets.search_icon} alt="" />
-                <img src={assets.basket_icon} alt="" />
+                <img src={assets.basket_icon} alt="" onClick={()=> navigate("/cart")}/>
 
                 <button className="md:flex hidden item-center text-md justify-center p-2 px-6 border-red-500 border hover:bg-red-50 rounded-3xl" onClick={() => setShowLoginPopUp((prev) => !prev)}>
                     sign In

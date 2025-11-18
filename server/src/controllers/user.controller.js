@@ -10,7 +10,7 @@ const register = async (req, res, next) => {
             .json(new ApiResponse(201, "User registered successfully!", user));
 
     } catch (error) {
-        next(error);
+        next(error)
     }
 };
 
@@ -19,10 +19,9 @@ const register = async (req, res, next) => {
 
 
 const login = async (req, res, next) => {
-    console.log("jhress ---------------",req.body)
+
     try {
         const user = await loginUser(req.body);
-
         return res.status(201).json(new ApiResponse(201, "user logged in successfully!", user))
 
     } catch (error) {

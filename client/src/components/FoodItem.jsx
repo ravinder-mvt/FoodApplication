@@ -1,8 +1,59 @@
 import React from 'react'
 import { assets } from '../assets/assets/frontend_assets/assets'
 import { useState } from 'react'
+import { Decode } from "../utills/Decode.js"
+import { getToken } from '../utills/token.js'
+import { useAddToCartItem, useRemoveFromCart } from '../auth/useCart'
 const FoodItem = ({ item, index }) => {
     const [isSelected, setIsSelected] = useState(false)
+    const addMutation = useAddToCartItem();
+    const removeMutation = useRemoveFromCart()
+
+
+
+        const getInfo = async (item) => {
+            const token = getToken();
+            const filteredToken = Decode(token)
+            const data = {
+                userId: filteredToken.id,
+                itemId: item._id
+            }
+
+            console.log("tojene-----", data)
+            addMutation.mutate(data, {
+                onSuccess: (data) => {
+                    console.log("your data is here", data)
+                },
+                onError: (data) => {
+                    console.log("error is heree====", data)
+                }
+
+
+            })
+        };
+
+
+    const removeItem = async (item) => {
+
+        const token = getToken();
+        const filteredToken = Decode(token)
+        const data = {
+            userId: filteredToken.id,
+            itemId: item._id
+        }
+
+        console.log("tojene-----", data)
+        removeMutation.mutate(data, {
+            onSuccess: (data) => {
+                console.log("your data is here", data)
+            },
+            onError: (data) => {
+                console.log("error is heree====", data)
+            }
+
+
+        })
+    }
     return (
         <div className='my-6  relative'>
             <div key={index} className='flex items-center justify-center flex-col shadow-2xl'>
@@ -28,13 +79,16 @@ const FoodItem = ({ item, index }) => {
             </div>
 
             <div className='absolute right-2 bottom-[180px]'>
-                <img src={assets.add_icon_white} alt="plus icon" className='h-10 relative hover:text-green-500 rounded-4xl' onClick={()=>setIsSelected((prev)=>!prev)} />
+                <img src={assets.add_icon_white} alt="plus icon" className='h-10 relative hover:text-green-500 rounded-4xl' onClick={() => setIsSelected((prev) => !prev)} />
 
                 {
                     isSelected && (<>
                         <div className='flex items-center px-2 bg-white rounded-4xl justify-between  absolute top-0 right-px w-[120px]'>
                             <div>
-                                <img src={assets.remove_icon_red} alt="remove icons red" className='w-8 h-8 flex items-center justify-center rounded-full' />
+                                <img src={assets.remove_icon_red} alt="remove icons red" className='w-8 h-8 flex items-center justify-center rounded-full' onClick={(e) => {
+                                    e.stopPropagation()
+                                    removeItem(item)
+                                }} />
                             </div>
                             <div>
                                 <p className='bg-white text-black h-10 flex items-center justify-center'>
@@ -42,7 +96,7 @@ const FoodItem = ({ item, index }) => {
                                 </p>
                             </div>
                             <div>
-                                <img src={assets.add_icon_green} alt="green add icons" className='' />
+                                <img src={assets.add_icon_green} alt="green add icons" className='' onClick={() => getInfo(item)} />
                             </div>
 
                         </div>

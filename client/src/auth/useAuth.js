@@ -38,4 +38,14 @@ const useLoginUser = () => {
     })
 }
 
+
+//get cart
+
+const useGetCartInfo=()=>{
+    return useMutation({
+        mutationFn:async({
+            
+        })
+    })
+}
 export {useRegisterUser,useLoginUser}
