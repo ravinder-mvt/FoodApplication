@@ -22,7 +22,13 @@ const Cart = () => {
   }, []);
 
 
-  const cartData = cartMutation.data?.data.filter(item => item !== null) || [];
+
+
+if (cartMutation.isLoading) {
+  return <p>Loading cart...</p>;
+}
+
+const cartData = Object.values(cartMutation.data?.data || {}).filter(item => item !== null);
 
 
   const mergedCart = cartData

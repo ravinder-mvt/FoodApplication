@@ -19,13 +19,12 @@ const FoodItem = ({ item, index }) => {
                 itemId: item._id
             }
 
-            console.log("tojene-----", data)
             addMutation.mutate(data, {
                 onSuccess: (data) => {
                     console.log("your data is here", data)
                 },
                 onError: (data) => {
-                    console.log("error is heree====", data)
+                    console.log("error in add ", data)
                 }
 
 
@@ -42,7 +41,7 @@ const FoodItem = ({ item, index }) => {
             itemId: item._id
         }
 
-        console.log("tojene-----", data)
+   
         removeMutation.mutate(data, {
             onSuccess: (data) => {
                 console.log("your data is here", data)

@@ -1,7 +1,7 @@
 import axios from "axios"
 import {getToken} from "../utills/token.js"
 export const api = axios.create({
-    baseURL: "http://localhost:5001/api"
+    baseURL: "http://localhost:5002/api"
 })
 
 api.interceptors.request.use((config) => {
